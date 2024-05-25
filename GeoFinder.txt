@@ -1,0 +1,143 @@
+EXPORT Circle_Area()
+BEGIN
+	LOCAL Radius;
+	INPUT(Radius, "Circle Area", "Radius: ");
+	Ans := pi*Radius^2;
+	RETURN Ans;
+END;
+
+EXPORT Circle_Sector_Arc_Length()
+BEGIN
+	LOCAL Radius, Degrees;
+	INPUT({Radius, Degrees}, "Circle Sector Arc Length", {"Radius: ", "Degrees: "});
+	Ans := pi*Radius*(Degrees/360);
+	RETURN Ans;
+END;
+
+EXPORT Circle_Sector_Area()
+BEGIN
+	LOCAL Radius, Degrees;
+	INPUT({Radius, Degrees}, "Circle Sector Area", {"Radius: ", "Degrees: "});
+	Ans := pi*Radius^2*(Degrees/180);
+	RETURN Ans;
+END;
+
+EXPORT Circular_Cone_Slant()
+BEGIN
+	LOCAL Height, Radius;
+	INPUT({Height, Radius}, "Circular Cone Slant Length", {"Height: ", "Radius: "});
+	Ans := sqrt(Radius^2+Height^2);
+	RETURN Ans;
+END;
+
+EXPORT Circular_Cone_Surface()
+BEGIN
+	LOCAL Height, Radius, Slant;
+	INPUT({Radius, Slant}, "Circular Cone Surface Area", {"Radius: ", "Slant: "});
+	Ans := pi*Radius^2+pi*Radius*Slant;
+	RETURN Ans;
+END;
+
+EXPORT Circular_Cone_Volume()
+BEGIN
+	LOCAL Height, Radius;
+	INPUT({Height, Radius}, "Circular Cone Volume", {"Height: ", "Radius: "});
+	Ans := 1/3*pi*Radius^2*Height;
+	RETURN Ans;
+END;
+
+EXPORT Circular_Cone_Frustum()
+BEGIN
+	LOCAL SmallRadius, BigRadius, Height;
+	INPUT({SmallRadius, BigRadius, Height}, "Circular Cone Frustum Volume", {"Small Radius: ", "Big Radius: ", "Height: "});
+	Ans := 1/3*pi*Height*(SmallRadius^2+SmallRadius*BigRadius+BigRadius^2);
+	RETURN Ans;
+END;
+
+EXPORT Circular_Ring_Area()
+BEGIN
+	LOCAL BigRadius, SmallRadius;
+	INPUT({BigRadius, SmallRadius}, "Circular Ring Area", {"Big Radius: ", "Small Radius: "});
+	Ans := pi*(BigRadius^2-SmallRadius^2);
+	RETURN Ans;
+END;
+
+EXPORT Rectangle_Square_Area()
+BEGIN
+	LOCAL SideA, SideB;
+	INPUT({SideA, SideB}, "Rectangle/Square Area", {"Side A: ", "Side B: "});
+	Ans := SideA*SideB;
+	RETURN Ans;
+END;
+
+EXPORT Rectangle_Square_Circumference()
+BEGIN
+	LOCAL SideA, SideB;
+	INPUT({SideA, SideB}, "Rectangle/Square Circumference", {"Side A: ", "Side B: "});
+	Ans := (2*SideA)+(2*SideB);
+	RETURN Ans;
+END;
+
+EXPORT Rectangular_Cube_Shape_Surface()
+BEGIN
+	LOCAL SideA, SideB, SideC;
+	INPUT({SideA, SideB, SideC}, "Rectangular/Cube Shape Surface Area", {"Side A: ", "Side B: ", "Side C: "});
+	Ans := (2*SideA*SideB)+(2*SideA*SideC)+(2*SideB*SideC);
+	RETURN Ans;
+END;
+
+EXPORT Rectangular_Shape_Volume()
+BEGIN
+	LOCAL SideA, SideB, SideC;
+	INPUT({SideA, SideB, SideC}, "Rectangular/Cube Shape Volume", {"Side A: ", "Side B: ", "Side C: "});
+	Ans := SideA*SideB*SideC;
+	RETURN Ans;
+END;
+
+EXPORT Sphere_Volume()
+BEGIN
+	LOCAL Radius;
+	INPUT(Radius, "Sphere Volume", "Radius: ");
+	Ans := (4*pi*Radius^3)/3;
+	RETURN Ans;
+END;
+
+EXPORT Sphere_Surface_Area()
+BEGIN
+	LOCAL Radius;
+	INPUT(Radius, "Sphere Surface Area", "Radius: ");
+	Ans := 4*pi*Radius^2;
+	RETURN Ans;
+END;
+
+EXPORT Trapezoid_Circumference()
+BEGIN
+	LOCAL SideA, SideB, SideC, SideD;
+	INPUT({SideA, SideB, SideC, SideD}, "Trapezoid Circumference", {"Side A: ", "Side B: ", "Side C: ", "Side D: "});
+	Ans := SideA+SideB+SideC+SideD;
+	RETURN Ans;
+END;
+
+EXPORT Trapezoid_Area()
+BEGIN
+	LOCAL SideA, SideB, Height;
+	INPUT({SideA, SideB, Height}, "Trapezoid Area", {"Side A: ", "Side B: ", "Height: "});
+	Ans := Height*(SideA+SideB)/2;
+	RETURN Ans;
+END;
+
+EXPORT Triangle_Area()
+BEGIN
+	LOCAL BaseLenth, Height;
+	INPUT({BaseLenth, Height}, "Triangle Area", {"Base Length: ", "Height: "});
+	Ans := 0.5*BaseLenth*Height;
+	RETURN Ans;
+END;
+
+EXPORT Triangle_Circumference()
+BEGIN
+	LOCAL SideA, SideB, SideC;
+	INPUT({SideA, SideB, SideC}, "Triangle Circumference", {"Side A: ", "Side B: ", "Side C: "});
+	Ans := SideA+SideB+SideC;
+	RETURN Ans;
+END;
